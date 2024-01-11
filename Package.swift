@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "Hodler",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v13), .macOS(.v10_15)
     ],
     products: [
         .library(
@@ -13,8 +13,8 @@ let package = Package(
             targets: ["Hodler"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/horizontalsystems/BitcoinCore.Swift.git", .upToNextMajor(from: "2.0.0")),
-        .package(url: "https://github.com/horizontalsystems/HsCryptoKit.Swift.git", .upToNextMajor(from: "1.2.1")),
+        .package(url: "https://github.com/metalurgical/BitcoinCore.Swift", branch: "upgrade_secp256k1_0_12_2"),
+        .package(url: "https://github.com/metalurgical/HsCryptoKit.Swift", branch: "upgrade_secp256k1_0_12_2"),
     ],
     targets: [
         .target(
